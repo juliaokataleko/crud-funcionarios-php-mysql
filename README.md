@@ -1,6 +1,6 @@
 # crud-funcionarios-php-mysql
 #
-https://www.youtube.com/watch?v=<N5myqxErqeY>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/N5myqxErqeY/0.jpg)](https://www.youtube.com/watch?v=N5myqxErqeY)
 #
 Um sistema simples de gestão de funcionários com 
 registo, listagem, actualização, exclusão e pesquisa de 
