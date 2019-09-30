@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+a {
+    color: #0d50cc;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+#header {
+    height: 4em;
+    line-height: 4em;
+    background: #000000;
+    text-align: center;
+    color: #ffffff;
+}
+
+#header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#header a:hover {
+    color: #dddddd;
+    transition: 0.4s;
+}
+
+.container {
+    background: #ffffff;
+    color: #333333;
+    padding: 3em;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+.footer {
+    background: #888888;
+    color: #ffffff;
+    padding: 3em;
+    text-align: center;
+}
+
+.add {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    margin-left: 5em;
+}
+
+.add:hover {
+    padding: 5px;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: #000000;
+}
+
+#nome, 
+#email, 
+#endereco, 
+#telefone, 
+#genero, 
+#cargo, 
+#salario {
+    display: block;
+    padding: 5px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 450px;
+}
+
+#regButton {
+    display: block;
+    background: #000000;
+    padding: 18px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+    color: #ffffff;
+    margin-top: 2em;
+}
+
+.success {
+    color: rgb(20, 143, 26);
+    margin-bottom: 2em;
+}
+
+.error {
+    color: rgb(185, 33, 13);
+}
+
+td {
+    border: 2px solid #000000;
+    padding: 8px;
+}
+
+.pagination {
+    margin-top: 2em;
+}
+
+.pagination a {
+    background: #000000;
+    padding: 18px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+    color: #ffffff;
+    margin-top: 2em;
+}
+
+.pagination a#active {
+    background: #444444;
+}
+
+#accoes {
+    background: #0f78b4;
+    color: #ffffff;
+}
+
+.theader {
+    background: #000000;
+    color: #ffffff;
+}
+
+.nome {
+    color: rgb(6, 150, 54);
+}
+
+.excluir {
+    color: #d4a610;
+}
+
+table {
+    width: 100%;
+}
