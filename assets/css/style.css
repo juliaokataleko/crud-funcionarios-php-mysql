@@ -149,10 +149,7 @@
             color: #ffffff;
         }
         
-        .theader {
-            background: #000000;
-            color: #ffffff;
-        }
+        .theader {}
         
         .nome {
             color: rgb(6, 150, 54);
