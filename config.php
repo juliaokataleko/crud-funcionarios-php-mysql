@@ -1,6 +1,6 @@
 <?php
 # App settings
-define('MAIN_TITLE', 'RHS');
+define('MAIN_TITLE', 'Mega Men RH');
 
 # Database settings
 define('DB_HOST', 'localhost');

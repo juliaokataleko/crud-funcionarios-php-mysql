@@ -1,7 +1,7 @@
 <?php
 require_once 'views/partials/header.php';
 ?>
-<h1>Lista de Funcionários</h1>
+
 <?php
 
 # Receber número da página
@@ -30,40 +30,57 @@ if (mysqli_num_rows($resultado) == 0) {
 }
 ?>
 <form action="?page=pesquisar" method="get">
-    <input type="search" placeholder="Pesquisar..." name="query" id="" <?php if (isset($_GET['query'])) echo "value=$query"; ?>> <button type="submit">Pesquisar</button>
+    <div class="d-md-flex flex-row justify-content-between">
+        <h3>Lista de Funcionários</h3>
+        <div class="search">
+            <div class="row">
+                <div class="col-8">
+                    <input class="form-control" type="search" placeholder="Pesquisar..." name="query" id="" <?php if (isset($_GET['query'])) echo "value=$query"; ?>>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-primary" type="submit">Pesquisar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </form>
 <br>
-<table>
-    <tr class="theader">
-        <td>ID:</td>
-        <td>Nome</td>
-        <td>Email</td>
-        <td>Endereço</td>
-        <td>Salário</td>
-        <td>Cargo</td>
-        <!--<td>Telefone</td>-->
-        <td id="accoes">Acções</td>
-    </tr>
-    <?php
-    while ($row_funcionario = mysqli_fetch_assoc($resultado)) {
-        $id = $row_funcionario['id'];
-        echo "<tr>";
-        echo "<td>" . $row_funcionario['id'] . "</td>";
-        echo "<td class='nome'><a href='?page=funcionario&id=$id'>" . $row_funcionario['nome'] . "</a></td>";
-        echo "<td>" . $row_funcionario['email'] . "</td>";
-        echo "<td>" . $row_funcionario['endereco'] . "</td>";
-        echo "<td>" . moedaMonetaria($row_funcionario['salario']) . "</td>";
-        echo "<td>" . $row_funcionario['cargo'] . "</td>";
-        # echo "<td>".$row_funcionario['telefone']."</td>";
-        echo "
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr class="theader">
+            <td>ID:</td>
+            <td>Nome</td>
+            <td>Email</td>
+            <td>Endereço</td>
+            <td>Salário</td>
+            <td>Cargo</td>
+            <!--<td>Telefone</td>-->
+            <td id="accoes">Acções</td>
+        </tr>
+        <?php
+        while ($row_funcionario = mysqli_fetch_assoc($resultado)) {
+            $id = $row_funcionario['id'];
+            echo "<tr>";
+            echo "<td>" . $row_funcionario['id'] . "</td>";
+            echo "<td class='nome'><a href='?page=funcionario&id=$id'>" . $row_funcionario['nome'] . "</a></td>";
+            echo "<td>" . $row_funcionario['email'] . "</td>";
+            echo "<td>" . $row_funcionario['endereco'] . "</td>";
+            echo "<td>" . moedaMonetaria($row_funcionario['salario']) . "</td>";
+            echo "<td>" . $row_funcionario['cargo'] . "</td>";
+            # echo "<td>".$row_funcionario['telefone']."</td>";
+            echo "
         <td>
             <a href='?page=editform&id=" . $row_funcionario['id'] . "'>Editar</a>
             <a class='excluir' onclick='return confirmDelete()' href='/scripts/excluirfuncionario.php?id=" . $row_funcionario['id'] . "'>Excluir</a>
         </td>";
-        echo "</tr>";
-    }
-    ?>
-</table>
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</div>
+
 <?php
 # mostrando a paginação
 $result_pg = mysqli_query($conn, "SELECT COUNT(id) AS num_result FROM funcionarios");
